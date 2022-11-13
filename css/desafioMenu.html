@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* Abaixo solução do professor */
+        /* * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+        }
+
+        .cabecalho {
+            background: #333;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .menu-toggle {
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px 15px;
+        }
+
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .menu li {
+            display: inline-block;
+        }
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+        }
+
+        .menu a {
+            padding: 15px;
+        }
+
+        .autenticacao {
+            float: right;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu a:hover,
+        .menu a.selected {
+            background-color: #4faddb;
+            color: #000;
+        }
+
+        .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
+
+        .destaque {
+            background: #f50a31;
+            color: #eee
+        }
+
+        @media(min-width: 679px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media(max-width: 680px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        @media(max-width: 910px) {
+            .autenticacao {
+                display: none;
+            }
+        } */
+
+        /* Abaixo a solução que fiz*/
+        body {
+            margin: 0;
+            margin-top: 0;
+            background-color: #cfd5d6;
+        }
+
+        header {
+            width: 100%;
+            height: 65px;
+            border-bottom-style: outset;
+            border-color: #a1dff3;
+            border-width: 4px;
+        }
+
+        .cabecalho,
+        .logo,
+        .menu-toggle,
+        .menu,
+        ul li,
+        .autenticacao {
+            display: inline-block;
+            background-color: #2c2b2b;
+            color: white;
+        }
+
+        img {
+            width: 200px;
+            position: fixed;
+        }
+
+        nav a,
+        aside a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        a img {
+            display: inline-block;
+            margin: 20px;
+            margin-top: -29px;
+        }
+
+        ul li a:hover,
+        ul li a.selected {
+            background-color: #4faac9;
+            color: black;
+        }
+
+        .menu {
+            margin-left: 250px;
+            margin-top: 5px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 950px) {
+            .menu-toggle {
+                display: block;
+                float: right;
+                margin: 20px;
+                margin-top: 20px;
+            }
+
+            a img {
+                float: left;
+                margin: 20px;
+                margin-top: -10px;
+            }
+
+            .autenticacao,
+            ul li {
+                display: none;
+            }
+        }
+
+        .autenticacao {
+            float: right;
+            margin: 20px;
+            margin-top: 20px;
+
+        }
+
+        .botao {
+            border-radius: 25px;
+            background-color: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        window.onhashchange = function (e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+             console.log(oldURL, newURL)
+             const oldMenu = document.querySelector(`.menu a[href = '#${oldURL}']`)
+             const newMenu = document.querySelector(`.menu a[href = '#${newURL}']`)
+             oldMenu && oldMenu.classList.remove('selected')
+             newMenu && newMenu.classList.add('selected')
+        }
+    
+    </script>
+</body>
+
+</html>

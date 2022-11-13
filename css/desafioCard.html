@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        div .curso {
+            margin: 0px 20px;
+            display: inline-block;
+            vertical-align: top;
+            height: 300px;
+            width: 250px;
+            box-sizing: content-box;
+            box-shadow: 2px 8px 10px 10px #d1cfcf;
+            margin-bottom: 30px;
+        }
+
+        .curso img {
+            margin: 5px;
+            width: 96% !important;
+        }
+
+        .curso-info {
+            font-size: 22px;
+            margin-left: 10px;
+            box-sizing: content-box;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .curso-info h4 {
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        .curso-info p {
+            font-size: 15px;
+            padding-top: -10px;
+        }
+
+        .curso-preco {
+            float: right;
+            padding-top: 15px;
+        }
+
+        .preco-por {
+            color: green;
+            font-weight: 1000;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .preco-de {
+            color: red;
+            font-weight: 600;
+            font-size: 17px;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Card</h1>
+
+    <h2>Objetivo</h2>
+    <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
+
+    <h2>Resultado</h2>
+    <div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
+            <div class="curso-info">
+                <h4>Docker: Ferramenta essencial para Desenvolvedores</h4>
+                <p>Prof. Fulano</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso2.jpg" />
+            <div class="curso-info">
+                <h4>Web Moderno com Javascript + Projetos</h4>
+                <p>Prof. Sicrano Filho</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
